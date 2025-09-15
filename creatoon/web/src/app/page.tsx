@@ -10,6 +10,7 @@ import { SearchInput } from "@/components/ui/input"
 import { Skeleton } from "@/components/ui/skeleton"
 import { Emoji } from "@/components/emojis"
 import { ImagesShell } from "@/components/shells"
+import { ExampleImagesGrid } from "@/components/example-images"
 
 export default function HomePage() {
   const { ref, inView } = useInView()
@@ -52,7 +53,7 @@ export default function HomePage() {
       data?.pages
         .flatMap((page) =>
           page.data.map((image) => ({
-            url: `https://storage.sujjeee.com/images/${image.id}.jpeg`,
+            url: `https://storage.sandipan.com/images/${image.id}.jpeg`,
             prompt: image.prompt,
           })),
         )
@@ -77,7 +78,16 @@ export default function HomePage() {
           />
         </div>
       </div>
-      <div className="w-full pt-36">
+      {/* Example Images Section */}
+      <div className="w-full pt-8">
+        <div className="mb-6 text-center">
+          <h2 className="text-2xl font-bold text-gray-800 mb-2">Explore Cartoon Styles</h2>
+          <p className="text-gray-600">Discover amazing cartoon illustrations created by our AI</p>
+        </div>
+        <ExampleImagesGrid />
+      </div>
+
+      <div className="w-full pt-8">
         <ImagesShell images={images} ref={ref} hasNextPage={hasNextPage} />
         {isLoading && (
           <section className="grid w-full grid-cols-2 gap-2 pt-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
