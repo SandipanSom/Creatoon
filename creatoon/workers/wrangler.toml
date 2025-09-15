@@ -1,0 +1,10 @@
+name = "creatoon"
+compatibility_date = "2024-05-12"
+node_compat = true
+
+[dev]
+port = 5000
+
+[[kv_namespaces]]
+binding = "RATE_LIMITER"
+id = "5e25a92d3c764b0c93998c812451e283"
